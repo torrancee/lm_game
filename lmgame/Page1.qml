@@ -1,7 +1,14 @@
 import QtQuick 2.7
+import io.qt.examples.backend 1.0
 
 Page1Form {
-    button1.onClicked: {
-        console.log("Button Pressed. Entered text: " + textField1.text);
+
+    textField.onTextChanged: {
+        newObject.userName = textField.text
     }
+
+    BackEnd{
+        id: newObject
+    }
+
 }
